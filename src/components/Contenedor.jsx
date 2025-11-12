@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 function Contenedor({ children, titulo }) {
   return (
     // <div className="min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-8">
@@ -22,7 +24,9 @@ function Contenedor({ children, titulo }) {
           </h1>
         )}
 
-        {children}
+        {/* {children} */}
+
+        <Outlet/>
       </section>
     </main>
   );

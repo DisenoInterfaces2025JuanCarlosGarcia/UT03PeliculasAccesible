@@ -1,11 +1,25 @@
 import Contenedor from "./components/Contenedor";
 // import Interprete from "./Interprete";
-import Interprete from "./components/InterpreteAccesible";
+import Interprete from "./pages/InterpreteAccesible";
 import peliculas from "./data/peliculas";
 import './assets/styles/index.css'
+import Root_ from "postcss/lib/root";
 
 function App() {
   return (
+    <Header>
+
+    <Routes>
+      <Route element={<Contenedor/>}>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/Inicio' element={<Navigate to= '/'/>}/>
+        <Route path='/Peliculas' element={<Peliculas/>}/>
+        <Route path='/Interpretes' element={<Interpretes/>}/>
+        <Route path='/admin' element={<Admin/>}/>
+
+      </Route>
+
+    </Routes>
     
     <Contenedor titulo="Intérpretes de películas destacadas">
       {/* <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]"> */}
@@ -66,6 +80,7 @@ function App() {
           )}
         </div>
     </Contenedor>
+    </Header>
   )
 }
 
