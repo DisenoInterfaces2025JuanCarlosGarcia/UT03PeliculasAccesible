@@ -1,3 +1,6 @@
+import peliculas from "../data/peliculas";
+
+
 function Interprete(props) {
     const { foto, nombre, esNota10 } = props;
     return (
