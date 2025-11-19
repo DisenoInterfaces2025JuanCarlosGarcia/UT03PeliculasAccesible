@@ -14,6 +14,7 @@ function Peliculas() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
                 {peliculas.map((pelicula) => (
                     <article
+                    tabIndex={0}
                         key={pelicula.id}
                         className="bg-white rounded-lg shadow p-4 flex flex-col items-start"
                     >
