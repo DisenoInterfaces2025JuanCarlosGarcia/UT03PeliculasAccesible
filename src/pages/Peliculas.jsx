@@ -1,8 +1,10 @@
 import peliculas from "../data/peliculas";
+import { Link } from "react-router-dom";
 
 function Peliculas() {
     return (
         <>
+       
             <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
                 Películas
             </h1>
@@ -13,6 +15,11 @@ function Peliculas() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
                 {peliculas.map((pelicula) => (
+                    <Link
+            key={pelicula.id}
+            to={`/peliculas/${pelicula.id}`}
+            className="block"
+          >
                     <article
                     tabIndex={0}
                         key={pelicula.id}
@@ -35,8 +42,10 @@ function Peliculas() {
                             {pelicula.resumen}
                         </p>
                     </article>
+                    </Link>
                 ))}
             </div>
+            
 
         </>
     );

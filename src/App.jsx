@@ -5,7 +5,8 @@ import Home from "./pages/Home.jsx";
 import Peliculas from "./pages/Peliculas.jsx";
 import Admin from "./pages/Admin.jsx";
 import Interpretes from "./pages/Interpretes.jsx";
-
+import InterpreteDetalle from "./pages/InterpreteDetalle.jsx";
+import PeliculasDetalle from "./pages/PeliculasDetalle.jsx";
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Route path="/peliculas" element={<Peliculas />} />
           <Route path="/interpretes" element={<Interpretes />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/interpretes/:index" element={<InterpreteDetalle />} />
+          <Route path="/peliculas/:id" element={<PeliculasDetalle />} />
         </Route>
 
 

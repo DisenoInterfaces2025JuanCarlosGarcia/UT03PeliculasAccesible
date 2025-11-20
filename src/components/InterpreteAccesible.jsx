@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import peliculas from "../data/peliculas";
 
 
 function Interprete(props) {
     const { foto, nombre, esNota10 } = props;
     return (
+        
 
         <article
             tabIndex="0" // Permite navegar con Tab
@@ -37,7 +39,7 @@ function Interprete(props) {
                 {props.children}
             </p>
         </article>
-
+        
     );
 }
 
