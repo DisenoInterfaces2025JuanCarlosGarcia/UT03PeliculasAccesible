@@ -3,25 +3,30 @@
  * Componente para mostrar los detalles de un intérprete específico y las películas en las que ha participado.
  */
 
-import { useParams } from "react-router-dom";
+import { useParams,Link, useNavigate } from "react-router-dom";
 import peliculas from "../data/peliculas";
 
 
 function InterpreteDetalle() {
     const { idPelicula, index } = useParams();
     const indexNum = Number(index);
-   
-    const pelicula = peliculas.find(p => p.id === Number(idPelicula));
- 
-    const actor = pelicula.actores[indexNum];
 
+    const pelicula = peliculas.find(p => p.id === Number(idPelicula));
+
+    const actor = pelicula.actores[indexNum];
+    //const boton=useNavigate
     const pelisDelActor = peliculas.filter(p =>
         p.actores.find(a => a.nombre === actor.nombre)
     );
 
     return (
+
         <div className="max-w-3xl mx-auto mt-10 p-4">
-            <h1 className="text-3xl font-bold text-center mb-6">{actor.nombre}</h1>
+            <a  href="/interpretes" className="mt-6 inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors">Volver</a>
+            {/* <button onClick={()=> boton(-1)}> 
+                Volver in
+            </button> */}
+            <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">{actor.nombre}</h1>
 
             <img
                 src={actor.imagen}
@@ -47,7 +52,10 @@ function InterpreteDetalle() {
                     </li>
                 ))}
             </ul>
+           
+
         </div>
+
     );
 }
 
