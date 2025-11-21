@@ -1,3 +1,8 @@
+/**
+ * Contenedor.jsx
+ * Componente contenedor para envolver el contenido principal de la aplicación.
+ */
+
 import { Outlet } from "react-router-dom";
 
 function Contenedor({children, titulo }) {

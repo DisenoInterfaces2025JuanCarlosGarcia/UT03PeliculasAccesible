@@ -16,9 +16,9 @@ function Peliculas() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
                 {peliculas.map((pelicula) => (
                     <Link
-            key={pelicula.id}
+            //key={pelicula.id}
             to={`/peliculas/${pelicula.id}`}
-            className="block"
+            //className="block"
           >
                     <article
                     tabIndex={0}
